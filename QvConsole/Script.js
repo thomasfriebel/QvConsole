@@ -3,7 +3,7 @@
  * 
  * by Thomas Friebel (thomasfriebel@gmail.com)
  * 
- * License: This is QlikView extension is free to use for any purpose.
+ * License: See license file included
  *  
  */
 $(function(){
