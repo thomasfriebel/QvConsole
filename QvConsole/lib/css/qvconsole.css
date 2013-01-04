@@ -1,0 +1,70 @@
+.qvconsole {
+	font-size:8pt;
+	width:100%;
+	height:100%;
+	position:relative;
+	overflow:hidden;
+}
+
+.qvconsole .console {
+	overflow:scroll;
+	position:relative;
+	top:0px;
+	width:100%;	
+	height:90%;
+	background-color:white;
+}
+
+
+.qvconsole .console DIV {
+	border-bottom:1px dotted #aaa;
+	padding-top:5px;
+}
+
+.qvconsole .console .consoletrace 
+,.qvconsole .console .consoledebug 
+,.qvconsole .console .consolelog {
+	color: #666;
+}
+
+.qvconsole .console .consoleinfo {
+	color: blue;
+}
+.qvconsole .console .consoleerror {
+	color: red;
+	font-weight:bold;
+}
+
+.qvconsole .bottom {
+	font-weight:bold;
+	position:absolute;
+	bottom:0px;
+	width:100%;
+	min-height:30px;
+	max-height:30px;
+	background-color:#aaa;
+}
+
+.qvconsole .bottom input{
+	width:80%;
+	margin:3px;
+	border: 1px solid #666;
+	padding:3px;
+	border-radius:4px;
+}
+.qvconsole .bottom button{
+	float:right;
+	padding:4px;
+	padding-left:8px;
+	padding-right:8px;
+	border:1px solid black;
+	background-color:silver;
+	margin:3px;
+	border-radius:16px;
+}
+
+.qvconsole HR {
+	height:1px;
+	background-color:#a88;
+	margin:0px;
+}

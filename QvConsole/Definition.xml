@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExtensionObject Type="object" Label="QvConsole" Description="A debugging console" PropertiesPage="xDynProperties.qvpp">
+	<Initiate Name="Caption.Text" Value="QvConsole" />
+	<Initiate Name="Caption.Icon.Print" Value="0" />
+	<Initiate Name="Caption.Icon.SendToExcel" Value="0" />
+	<Initiate Name="Caption.HelpText" Value="QvConsole is a debugging console and acts exclusively in the web browser, never on the QlikView Server side.
+	Use console.log(), console.info(), console.error(), console.time([name]) and console.timeEnd([name]) to populate the console and console.clear() to empty it." />
+</ExtensionObject>

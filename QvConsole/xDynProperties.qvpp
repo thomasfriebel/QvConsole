@@ -1,0 +1,39 @@
+<div class="ToolWindow-MainBody" avq="foldOutMenu:." style="overflow: visible !important; float: left;">
+	<div class="prop-accordion" avq="accordion:.">
+		<h3 class="prop-h3 accordion-shadow">
+			<a href="#">
+				QvConsole
+			</a>
+		</h3>
+		<div class="prop-grid_container accordion-shadow-enabler" style="overflow:auto;">
+			<div class="prop-grid_clear prop-grid_top-vertical-spacer-12px prop-grid_last"></div>
+			<p style="width:100%;text-alignment:center;">
+				<h3>Home</h3>
+				QvConsole resides at <a href="http://blog.dijit.de" target="_blank">blog.dijit.de</a> and has been developed by <a href="mailto:thomasfriebel@gmail.com">Thomas Friebel</a>
+			</p>
+			<p>
+				<h3>About</h3>			
+				QvConsole is a Javascript debugging console that re-implements logging capabilities we all know and love from modern browsers.<br/>
+				It's primarily supposed to faciliate the development of new QlikView Object and Document Extensions and is by no way a replacement for the above mentioned consoles.<br/>
+				QvConsole <b>can</b> be used in QlikView Desktop client while in WebView mode.<br/>
+			</p>
+			<p>
+				<h3>Credits</h3>
+				General credits go to <a href="http://www.qlikblog.at" target="_blank">Stefan Walther</a> as I got some inspirations from components he developed.<br/>
+			</p>
+		</div>
+		<h3 class="prop-h3 accordion-shadow" avq="activeAccordionHeader:.:GenericPresentationFoldout.qvpp">
+			<a href="#">Präsentation</a>
+		</h3>
+		<div class="prop-grid_container accordion-shadow-enabler" avq="panel::Layout.qvpp"></div>
+		<h3 class="prop-h3 accordion-shadow" avq="activeAccordionHeader::PropertiesCaptionFoldout.qvpp">
+			<a href="#">Titelleiste</a>
+		</h3>
+		<div class="prop-grid_container accordion-shadow-enabler" avq="panel::Caption.qvpp"></div>
+		<h3 class="prop-h3 accordion-shadow" avq="activeAccordionHeader:.:PropertiesOptionsFoldout.qvpp">
+			<a href="#">Optionen</a>
+		</h3>
+		<div class="prop-grid_container accordion-shadow-enabler" avq="panel::Options.qvpp"></div>
+	</div>
+	<span class="bottom-gap"></span>
+</div>
