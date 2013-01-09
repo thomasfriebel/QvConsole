@@ -7,6 +7,7 @@
  *  
  */
 $(function(){
+
 	window._oldconsole = window.console
 	window._qvConsole = false
 	window.console = {
@@ -86,10 +87,11 @@ $(function(){
 			,timeEnd : function(sName) {
 				window.console.log("Timer "+sName +" = " + (new Date() - window.console._timers[sName]) + " ms")
 			}
-	}
+	};
+	
 	Qva.AddExtension('QvConsole', function() {
 		var _this = this
-		
+
 		_this.extensionName = 'QvConsole'
 		_this.version = '1.0'
 			
@@ -98,7 +100,6 @@ $(function(){
 			//30 is the fixed height of the bottom panel
 			$(this._qvConsole).height($(this.Element).outerHeight() - 30)
 		}
-		
 			var cssFiles = [];
 	        cssFiles.push('Extensions/' + _this.extensionName + '/lib/css/qvconsole.css');
 	        for (var i = 0; i < cssFiles.length; i++) {
@@ -121,8 +122,7 @@ $(function(){
 	        } else {
 		        console.info("QvConsole initialized and ready to log...")
 	        }
-//	        this.DocumentMgr.JSON = true
-//	        this.Layout.SetProperty('Caption.Text', 'QvConsole', true);
+
 	    
 	    _this.QvaPublic.Paint()
 		
@@ -136,6 +136,7 @@ $(function(){
         		}
         	}
         }		
-	},true);
+
+			});
 	
 });
