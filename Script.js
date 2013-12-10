@@ -5,8 +5,11 @@
  * 
  * License: See license file included
  *  
+ * Release 1.1
+ * - improved compatibility: works with IE7 to IE9 now
+ *
  */
-$(function(){
+($(function(){
 
 	window._oldconsole = window.console
 	window._qvConsole = false
@@ -17,47 +20,36 @@ $(function(){
 			 */
 			_timers : {}
 			,writeit : function(type,args) {
+				var params = args
 				var sItems = "> "
 				for (var i = 0; i < args.length; i++) {
-					sItems += args[i]+";";
+					sItems += args[i]+" ";
 				}
 				try {
+				
+					window._oldconsole.log(sItems); //write to original console
+
 					switch (type) {
 						case 1:
-							if (typeof window._oldconsole !== "undefined") {
-								window._oldconsole.log(window.console.writeit.caller.arguments.length > 1 ? window.console.writeit.caller.arguments : window.console.writeit.caller.arguments[0]);
-							}
 							$(window._qvConsole).append("<div class='consoletrace'>"+sItems+"</div>")
 							break;
 						case 2:
-							if (typeof window._oldconsole !== "undefined") {
-								window._oldconsole.trace(window.console.writeit.caller.arguments.length > 1 ? window.console.writeit.caller.arguments : window.console.writeit.caller.arguments[0]);
-							}
 							$(window._qvConsole).append("<div class='consoledebug'>"+sItems+"</div>")
 							break;
 						case 3:
-							if (typeof window._oldconsole !== "undefined") {
-								window._oldconsole.debug(window.console.writeit.caller.arguments.length > 1 ? window.console.writeit.caller.arguments : window.console.writeit.caller.arguments[0]);
-							}
 							$(window._qvConsole).append("<div class='consoleinfo'>"+sItems+"</div>")
 							break;
 						case 5:
-							if (typeof window._oldconsole !== "undefined") {
-								window._oldconsole.error(window.console.writeit.caller.arguments.length > 1 ? window.console.writeit.caller.arguments : window.console.writeit.caller.arguments[0]);
-							}
 							$(window._qvConsole).append("<div class='consoleerror'>"+sItems+"</div>")
 							break;
 						default :
-							if (typeof window._oldconsole !== "undefined") {
-								window._oldconsole.log(window.console.writeit.caller.arguments.length > 1 ? window.console.writeit.caller.arguments : window.console.writeit.caller.arguments[0]);
-							}
 							$(window._qvConsole).append("<div class='consolelog'>"+sItems+"</div>")
 					}
 					window._qvConsoleClone = $(window._qvConsole).html()
-				} catch (Exception) {}
+				} catch (Exception) {alert("Unhandled exception in QvConsole:\n" + Exception)}
 				window._qvConsole.scrollTop = window._qvConsole.scrollHeight 
 			},
-			log :function(){
+			log :function(x){
 				window.console.writeit(0,window.console.log.arguments)
 			}
 			,trace : function(x) {
@@ -93,7 +85,7 @@ $(function(){
 		var _this = this
 
 		_this.extensionName = 'QvConsole'
-		_this.version = '1.0'
+		_this.version = '1.1'
 			
 		_this.QvaPublic.Paint = function() {
 			//dynamically size the console panel 
@@ -122,14 +114,13 @@ $(function(){
 	        } else {
 		        console.info("QvConsole initialized and ready to log...")
 	        }
-
 	    
 	    _this.QvaPublic.Paint()
 		
 		function evaluateExpressionEvent(ev){
         	if (ev.keyCode == 13 && $(ev.target).val()) { //if RETURN and value
         		try {
-        			console.info(eval($(ev.target).val()))
+        			console.log($(ev.target).val() +" ==> ", eval($(ev.target).val()))
         			$(ev.target).val("") //clear input
         		} catch (Exception) {
         			console.error("Evaluation failed: " + $(ev.target).val())
@@ -139,4 +130,4 @@ $(function(){
 
 			});
 	
-});
+}));
